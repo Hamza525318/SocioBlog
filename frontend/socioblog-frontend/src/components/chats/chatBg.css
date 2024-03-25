@@ -1,0 +1,11 @@
+.bg-chat{
+    background-image: url("./chatbg3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+}
+.chat-message::placeholder{
+  position: relative;
+  top: 8px;
+}
