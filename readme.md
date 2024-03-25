@@ -25,5 +25,9 @@ Socioblog is a dynamic web application designed to foster a vibrant online commu
 5. Run the frontend development server using `npm start`
 
 
+## Images
+![Socioblog Logo](/home.png)
+
+
 ## License
 This project is licensed under the [MIT License](LICENSE).
