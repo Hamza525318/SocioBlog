@@ -26,7 +26,16 @@ Socioblog is a dynamic web application designed to foster a vibrant online commu
 
 
 ## Images
-![Socioblog Logo](/home.png)
+![Home Page](/home.png)
+![Connections Page](/connections.png)
+![ChooseTopics Page](/topics.png)
+![WriteBlog Page](/writeBlog.png)
+![searchResults Page](/searchresults.png)
+![UserProfile Page](/userprofile.png)
+![UserProfile Page](/signup.png)
+![Login Page](/login.png)
+
+
 
 
 ## License
