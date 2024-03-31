@@ -62,7 +62,7 @@ const addNewBlogPost = asyncErrorHandler(async (req,res)=>{
 //create new blog
 const createBlogPost = asyncErrorHandler(async(req,res,next)=>{
 
-    const {title,category,blog_content,user_id} = req.body;
+    const {title,category,blog_content,user_id,blogText} = req.body;
     const ImgFile = req.file;
     let blog_image_url="";
     if(ImgFile){
@@ -70,12 +70,20 @@ const createBlogPost = asyncErrorHandler(async(req,res,next)=>{
        blog_image_url =  await uploadImage(ImgFile.path).catch((err)=> next(new CustomError(
       {message: "there was an error uploading Image please try again!!"},500)));
     }
+
+    const blog_words = blogText.split(" ");
+
+    //console.log(blog_words);
+    // console.log(Math.ceil(blog_words.length/150));
+    //console.log(Math.floor(blog_words.length/150));
+
     const blog =  await blogModel.create({
         title: title,
         category: [category],
         blog_content: blog_content,
         blog_image:blog_image_url,
-        user_id:user_id
+        user_id:user_id,
+        read_time: Math.ceil(blog_words.length/150),
     })
 
     // console.log(blog);

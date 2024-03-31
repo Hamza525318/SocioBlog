@@ -45,6 +45,11 @@ const blogSchema = new mongoose.Schema({
         type: Array,
         default: [],
     },
+    read_time:{
+
+        type: Number,
+        default: 2
+    }
 
 })
 

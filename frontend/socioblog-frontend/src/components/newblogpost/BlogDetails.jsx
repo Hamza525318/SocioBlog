@@ -140,6 +140,7 @@ function BlogDetails() {
         formData.append("file",null)
       }
       formData.append("user_id",user_id);
+      formData.append("blogText",convertFromHTMLtoText(blogText));
 
       try{
         
@@ -310,10 +311,7 @@ function BlogDetails() {
 
   const generateBlogTags = async()=>{
        
-    const tempElement = document.createElement('div');
-    tempElement.innerHTML = blogText;
-    const text = tempElement.innerText;
-    text.trim();
+    const text = convertFromHTMLtoText(blogText)
 
     if(!text){
       alert("Cannot generate tags for empty content");
@@ -337,7 +335,13 @@ function BlogDetails() {
     }
   }
    
-  console.log(blogText);
+  const convertFromHTMLtoText = (blog_content)=>{
+
+    const textBox = document.createElement("div");
+    textBox.innerHTML = blog_content;
+    textBox.innerText.trim()
+    return textBox.innerText;
+  }
   return (
     <section className='w-screen'>
       <div className='w-screen flex justify-end'>

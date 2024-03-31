@@ -1,8 +1,9 @@
 import Avatar from '@mui/material/Avatar';
 import { Link } from 'react-router-dom';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import React from 'react'
 
-function SingleBlog({key,blog_id,title,content,image,createdAt,category}) {
+function SingleBlog({key,blog_id,title,content,image,createdAt,category,read_time}) {
 
   const tempDiv = document.createElement('div');
   tempDiv.innerHTML = content;
@@ -35,8 +36,12 @@ function SingleBlog({key,blog_id,title,content,image,createdAt,category}) {
         </div>
         <div className='flex items-center my-2'>
            <p className='bg-gray-200 text-sm px-2 rounded-xl'>{category}</p>
+           <div className=' ml-2 px-2 rounded-xl flex items-center'>
+             <p className='text-xs font-roboto text-gray-800'>{read_time?`${read_time} min read`:"2 min read"}</p>
+             {/* <AccessTimeIcon fontSize='small'/> */}
+           </div>
         </div>
-      </div>
+      </div> 
     </>
   )
 }

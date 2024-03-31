@@ -162,6 +162,7 @@ function AllBlogs(){
                   image={blog.blog_image} 
                   createdAt={blog.createdAt}
                   category = {blog.category}
+                  read_time = {blog.read_time}
                   />
                   </div>
                   )
